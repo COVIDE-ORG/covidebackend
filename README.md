@@ -1,4 +1,4 @@
-# covidebackend
+# Covid Backend
 
 ## Step to Contribute
 1. Make a `feature` branch from `dev` branch and then make PR to `dev` branch 
