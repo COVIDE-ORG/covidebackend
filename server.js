@@ -19,5 +19,5 @@ app.listen(process.env.DEV_PORT, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Covid Backend");
+  res.send("Covid Backend!!");
 });
