@@ -2,7 +2,7 @@
 
 ## Step to Contribute
 1. Make a `feature` branch from `dev` branch and then make PR to `dev` branch 
-2. Reuqest a Review
+2. Request a Review
 ### With Docker
 ```
 1. docker build -t node-covid-image .
