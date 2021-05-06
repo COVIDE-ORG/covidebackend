@@ -1,7 +1,7 @@
 # covidebackend
 
 ## Step to Contribute
-1. Make a ````feature``` branch and then make PR to ```dev``` branch 
+1. Make a `feature` branch from `dev` branch and then make PR to `dev` branch 
 2. Reuqest a Review
 ### With Docker
 ```
