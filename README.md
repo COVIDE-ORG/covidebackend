@@ -1,5 +1,8 @@
 # covidebackend
 
+## Step to Contribute
+1. Make a ````feature``` branch and then make PR to ```dev``` branch 
+2. Reuqest a Review
 ### With Docker
 ```
 1. docker build -t node-app-image .
