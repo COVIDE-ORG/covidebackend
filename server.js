@@ -19,7 +19,7 @@ app.use(cookieParser());
 
 //Start a server
 app.listen(process.env.DEV_PORT, () => {
-    console.log("Server Running!");
+    console.log("SEVER RUNNING!");
 });
 
 
