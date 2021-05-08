@@ -10,6 +10,8 @@ const cookieParser = require("cookie-parser");
 const volunteersRoutes = require("./routes/volunteers");
 const resourceRoutes = require("./routes/resources");
 const configRoutes = require("./routes/config");
+const helpRoutes = require("./routes/askForHelps");
+const impLinkRoutes = require("./routes/impLinks");
 
 // Middlewares
 app.use(express.json());
@@ -28,3 +30,5 @@ app.get("/", (req, res) => {
 app.use("/api/volunteers", volunteersRoutes);
 app.use("/api/resource", resourceRoutes);
 app.use("/api/config", configRoutes);
+app.use("/api/help", helpRoutes);
+app.use("/api/implinks", impLinkRoutes);

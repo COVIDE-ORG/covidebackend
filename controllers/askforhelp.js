@@ -1,6 +1,5 @@
 const sheetconfig = require("../config/config");
 const spreadsheetId = process.env.SPREADSHEET_ID;
-
 getUnique = (index, arg) => {
   var output = [];
   var count = 0;
@@ -45,40 +44,26 @@ getAll = async (collection, req, res) => {
     console.log(e);
   }
 };
-
-// getCount = async (collection, req, res) => {
-//   var page = req.params.page;
-//   var start = 0,
-//     end = 0;
-//   if (page == 0) {
-//     start = 2;
-//     end = 50;
-//   } else {
-//     start = 50 * page;
-//     end = 50 * (page + 1);
-//   }
-//   auth = sheetconfig.auth;
-//   const sheets = await sheetconfig.connect();
-//   try {
-//     const getRows = await sheets.spreadsheets.values.batchGet({
-//       auth,
-//       spreadsheetId,
-//       ranges: [`${collection}!1:1`, `${collection}!${start}:${end}`],
-//     });
-//     res.json({
-//       headers: getRows["data"]["valueRanges"][0]["values"],
-//       data: getRows["data"]["valueRanges"][1]["values"],
-//     });
-//   } catch (e) {
-//     res.status(400).send(`Cannot get ${collection} data`);
-//     console.log(e);
-//   }
-// };
-
-exports.getVolunteers = async (req, res) => {
-  await getAll("Volunteers/Helpline", req, res);
+exports.getHelp = async (req, res) => {
+  await getAll("Help", req, res);
 };
 
-// exports.getVolunteersByCount = async (req, res) => {
-//   await getCount("Volunteers/Helpline", req, res);
-// };
+exports.addHelp = async (req, res) => {
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const createRow = await sheets.spreadsheets.values.append({
+      spreadsheetId,
+      range: "Help",
+      insertDataOption: "INSERT_ROWS",
+      valueInputOption: "RAW",
+      resource: {
+        values: [[req.body.name, req.body.number, req.body.querry]],
+      },
+    });
+    res.send(createRow["statusText"]);
+  } catch (e) {
+    res.status(400).send(`Cannot create help data`);
+    console.log(e);
+  }
+};
