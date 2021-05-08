@@ -1,5 +1,5 @@
 const sheetconfig = require("../config/config");
-const spreadsheetId = process.env.spreadsheet_id;
+const spreadsheetId = process.env.SPREADSHEET_ID;
 
 exports.getMetadata = async (req, res) => {
   auth = sheetconfig.auth;
@@ -9,12 +9,13 @@ exports.getMetadata = async (req, res) => {
       auth,
       spreadsheetId,
     });
-    if (metaData[status] == 200) {
+    if (metaData.status == "200") {
       res.json("Connection Succesful");
     }else{
       res.status(400).send("Connecttion failed");
     }
-  } catch {
+  } catch(e) {
+    console.log(e);
     res.status(400).send("ServerDown");
   }
 };
