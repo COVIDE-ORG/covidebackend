@@ -13,8 +13,6 @@ router.get("/ambulance/", resource.getAmbulance);
 router.get("/ambulance/count/:page", resource.getAmbulanceByCount);
 router.get("/meds/", resource.getMeds);
 router.get("/meds/count/:page", resource.getMedsByCount);
-router.get("/volunteers/", resource.getVolunteers);
-router.get("/volunteers/count/:page", resource.getVolunteersByCount);
 
 module.exports = router;
 

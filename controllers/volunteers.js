@@ -49,42 +49,10 @@ getCount = async (collection, req, res) => {
   }
 };
 
-exports.getOxygen = async (req, res) => {
-  await getAll("Oxygen", req, res);
+exports.getVolunteers = async (req, res) => {
+  await getAll("Volunteers/Helpline", req, res);
 };
 
-exports.getOxygenByCount = async (req, res) => {
-  await getCount("Oxygen", req, res);
-};
-
-exports.getBeds = async (req, res) => {
-  await getAll("Beds", req, res);
-};
-
-exports.getBedsByCount = async (req, res) => {
-  await getCount("Beds", req, res);
-};
-
-exports.getPlasma = async (req, res) => {
-  await getAll("Plasma", req, res);
-};
-
-exports.getPlasmaByCount = async (req, res) => {
-  await getCount("Plasma", req, res);
-};
-
-exports.getAmbulance = async (req, res) => {
-  await getAll("Ambulance", req, res);
-};
-
-exports.getAmbulanceByCount = async (req, res) => {
-  await getCount("Ambulance", req, res);
-};
-
-exports.getMeds = async (req, res) => {
-  await getAll("Meds", req, res);
-};
-
-exports.getMedsByCount = async (req, res) => {
-  await getCount("Meds", req, res);
+exports.getVolunteersByCount = async (req, res) => {
+  await getCount("Volunteers/Helpline", req, res);
 };
