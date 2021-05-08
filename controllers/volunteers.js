@@ -53,6 +53,6 @@ exports.getVolunteers = async (req, res) => {
   await getAll("Volunteers/Helpline", req, res);
 };
 
-exports.getVolunteersByCount = async (req, res) => {
-  await getCount("Volunteers/Helpline", req, res);
-};
+// exports.getVolunteersByCount = async (req, res) => {
+//   await getCount("Volunteers/Helpline", req, res);
+// };
