@@ -9,26 +9,12 @@ exports.getMetadata = async (req, res) => {
       auth,
       spreadsheetId,
     });
-    res.json(metaData["status"]);
+    if (metaData[status] == 200) {
+      res.json("Connection Succesful");
+    }else{
+      res.status(400).send("Connecttion failed");
+    }
   } catch {
-    res.status(400).send("Cannot Check Connection");
-  }
-};
-
-exports.getsheets = async (req, res) => {
-  auth = sheetconfig.auth;
-  const sheets = await sheetconfig.connect();
-  const request = {
-    spreadsheetId: spreadsheetId,
-    ranges: [],
-    includeGridData: false,
-    auth: sheetconfig.auth,
-  };
-
-  try {
-    const response = (await sheets.spreadsheets.get(request)).data;
-    res.json(response["sheets"]);
-  } catch (err) {
-    res.status(400).send("Cannot get sheets");
+    res.status(400).send("ServerDown");
   }
 };

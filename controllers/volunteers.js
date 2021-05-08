@@ -1,5 +1,5 @@
 const sheetconfig = require("../config/config");
-const spreadsheetId = process.env.spreadsheet_id;
+const spreadsheetId = process.env.SPREADSHEET_ID;
 
 getAll = async (collection, req, res) => {
   auth = sheetconfig.auth;
