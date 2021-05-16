@@ -3,8 +3,10 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const app = express();
+const httpapp = express();
 const fs = require("fs");
 const https = require("https");
+const http = require("http");
 
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -21,11 +23,6 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-//Start a server
-app.listen(process.env.DEV_PORT, () => {
-  console.log("Server Running!");
-});
-
 app.get("/", (req, res) => {
   res.send("Covid Backend!!");
 });
@@ -36,6 +33,12 @@ app.use("/api/config", configRoutes);
 app.use("/api/help", helpRoutes);
 app.use("/api/implinks", impLinkRoutes);
 
+httpapp.get("*", function (req, res, next) {
+  res.redirect("https://" + req.headers.host + req.path);
+});
+
+const httpServer = http.createServer(httpapp);
+
 const httpsServer = https.createServer(
   {
     key: fs.readFileSync(path.resolve(__dirname,'./ssl/privkey.pem')),
@@ -43,6 +46,9 @@ const httpsServer = https.createServer(
   },
   app
 );
+httpServer.listen(80, () => {
+  console.log("HTTP Server running on port 80");
+});
 
 httpsServer.listen(443, () => {
   console.log("HTTPS Server running on port 443");
