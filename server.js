@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const path = require("path");
 const express = require("express");
 const app = express();
 const fs = require("fs");
@@ -37,8 +38,8 @@ app.use("/api/implinks", impLinkRoutes);
 
 const httpsServer = https.createServer(
   {
-    key: fs.readFileSync("./ssl/privKey.pem"),
-    cert: fs.readFileSync("./ssl/fullchain.pem")
+    key: fs.readFileSync(path.resolve(__dirname,'./ssl/privkey.pem')),
+    cert: fs.readFileSync(path.resolve(__dirname,'./ssl/fullchain.pem'))
   },
   app
 );
