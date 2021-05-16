@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const express = require("express");
 const app = express();
+const fs = require("fs");
+const https = require("https");
 
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
@@ -32,3 +34,15 @@ app.use("/api/resource", resourceRoutes);
 app.use("/api/config", configRoutes);
 app.use("/api/help", helpRoutes);
 app.use("/api/implinks", impLinkRoutes);
+
+const httpsServer = https.createServer(
+  {
+    key: fs.readFileSync("./ssl/privKey.pem"),
+    cert: fs.readFileSync("./ssl/fullchain.pem")
+  },
+  app
+);
+
+httpsServer.listen(443, () => {
+  console.log("HTTPS Server running on port 443");
+});
