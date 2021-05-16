@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.68bff771.chunk.css",
+    "main.js": "/static/js/main.fd1672d1.chunk.js",
+    "main.js.map": "/static/js/main.fd1672d1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.48d3e6ab.js",
+    "runtime-main.js.map": "/static/js/runtime-main.48d3e6ab.js.map",
+    "static/js/2.47505e98.chunk.js": "/static/js/2.47505e98.chunk.js",
+    "static/js/2.47505e98.chunk.js.map": "/static/js/2.47505e98.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.68bff771.chunk.css.map": "/static/css/main.68bff771.chunk.css.map",
+    "static/js/2.47505e98.chunk.js.LICENSE.txt": "/static/js/2.47505e98.chunk.js.LICENSE.txt",
+    "static/media/Picture.b91c7394.jpeg": "/static/media/Picture.b91c7394.jpeg",
+    "static/media/iot.71af8253.webp": "/static/media/iot.71af8253.webp",
+    "static/media/mohit_patel.9082506e.jpeg": "/static/media/mohit_patel.9082506e.jpeg",
+    "static/media/msac.8b532b4b.png": "/static/media/msac.8b532b4b.png",
+    "static/media/rudit_rahul.45445593.jpeg": "/static/media/rudit_rahul.45445593.jpeg",
+    "static/media/sambit_majhi.5bf5010a.png": "/static/media/sambit_majhi.5bf5010a.png",
+    "static/media/sambit_saha.7d416d9c.jpeg": "/static/media/sambit_saha.7d416d9c.jpeg",
+    "static/media/tph.aa0b69f8.jpg": "/static/media/tph.aa0b69f8.jpg",
+    "static/media/tt.c9f283ee.png": "/static/media/tt.c9f283ee.png",
+    "static/media/vt.a0953068.png": "/static/media/vt.a0953068.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48d3e6ab.js",
+    "static/js/2.47505e98.chunk.js",
+    "static/css/main.68bff771.chunk.css",
+    "static/js/main.fd1672d1.chunk.js"
+  ]
+}
