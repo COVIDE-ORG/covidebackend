@@ -31,8 +31,8 @@ getAll = async (collection, req, res) => {
       range: collection,
     });
     var arg = getRows["data"]["values"].slice(1);
-    var states = getUnique(0, arg);
-    var cities = getUnique(1, arg);
+    var states = getUnique(1, arg);
+    var cities = getUnique(2, arg);
     res.json({
       headers: getRows["data"]["values"][0],
       states: states,
