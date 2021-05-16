@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "sudo nodemon server.js"
+    "start": "nodemon server.js"
   },
   "author": "KIIT",
   "license": "ISC",
