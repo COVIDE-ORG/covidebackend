@@ -55,11 +55,20 @@ exports.addHelp = async (req, res) => {
       valueInputOption: "RAW",
       resource: {
         values: [
-          [req.body.name,req.body.number,req.body.querry],
+          [
+            req.body.Place,
+            req.body.Age,
+            req.body.SpO2,
+            req.body.AdmittedIn,
+            req.body.Requirement,
+            req.body.Name,
+            req.body.ContactNo,
+            req.body.AlternateNo,
+          ],
         ],
       },
     });
-    res.send(createRow["statusText"])
+    res.send(createRow["statusText"]);
   } catch (e) {
     res.status(400).send(`Cannot create help data`);
     console.log(e);
