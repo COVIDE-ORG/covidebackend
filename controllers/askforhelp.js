@@ -56,12 +56,13 @@ exports.addHelp = async (req, res) => {
       resource: {
         values: [
           [
+            req.body.PatientName,
             req.body.Place,
             req.body.Age,
             req.body.SpO2,
             req.body.AdmittedIn,
             req.body.Requirement,
-            req.body.Name,
+            req.body.AttendantName,
             req.body.ContactNo,
             req.body.AlternateNo,
           ],
