@@ -20,15 +20,14 @@ getUnique = (index, arg) => {
   }
   return output;
 };
-
-getAll = async (collection, req, res) => {
+exports.getHelp = async (req, res) => {
   auth = sheetconfig.auth;
   const sheets = await sheetconfig.connect();
   try {
     const getRows = await sheets.spreadsheets.values.get({
       auth,
       spreadsheetId,
-      range: collection,
+      range: "Help",
     });
     var arg = getRows["data"]["values"].slice(1);
     var states = getUnique(0, arg);
@@ -43,9 +42,6 @@ getAll = async (collection, req, res) => {
     res.status(400).send(`Cannot get ${collection} data`);
     console.log(e);
   }
-};
-exports.getHelp = async (req, res) => {
-  await getAll("Help", req, res);
 };
 
 exports.addHelp = async (req, res) => {

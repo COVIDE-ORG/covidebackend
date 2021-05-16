@@ -14,36 +14,13 @@ getUnique = (index, arg) => {
     }
     count++;
     if (count == 1 && start == false) {
+      console.log(arg[j][index]);
       output.push(arg[j][index]);
     }
     start = false;
     count = 0;
   }
   return output;
-};
-
-getAll = async (collection, req, res) => {
-  auth = sheetconfig.auth;
-  const sheets = await sheetconfig.connect();
-  try {
-    const getRows = await sheets.spreadsheets.values.get({
-      auth,
-      spreadsheetId,
-      range: collection,
-    });
-    var arg = getRows["data"]["values"].slice(1);
-    var states = getUnique(0, arg);
-    var cities = getUnique(1, arg);
-    res.json({
-      headers: getRows["data"]["values"][0],
-      states: states,
-      cities: cities,
-      data: arg,
-    });
-  } catch (e) {
-    res.status(400).send(`Cannot get ${collection} data`);
-    console.log(e);
-  }
 };
 
 // getCount = async (collection, req, res) => {
@@ -76,41 +53,122 @@ getAll = async (collection, req, res) => {
 // };
 
 exports.getOxygen = async (req, res) => {
-  await getAll("Oxygen", req, res);
+  console.log("Oxygen");
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Oxygen",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = await getUnique(0, arg);
+    var cities = await getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get ${collection} data`);
+    console.log(e);
+  }
 };
-
-// exports.getOxygenByCount = async (req, res) => {
-//   await getCount("Oxygen", req, res);
-// };
 
 exports.getBeds = async (req, res) => {
-  await getAll("Beds", req, res);
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Beds",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = await getUnique(0, arg);
+    var cities = await getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get ${collection} data`);
+    console.log(e);
+  }
 };
-
-// exports.getBedsByCount = async (req, res) => {
-//   await getCount("Beds", req, res);
-// };
 
 exports.getPlasma = async (req, res) => {
-  await getAll("Plasma", req, res);
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Plasma",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = await getUnique(0, arg);
+    var cities = await getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get ${collection} data`);
+    console.log(e);
+  }
 };
-
-// exports.getPlasmaByCount = async (req, res) => {
-//   await getCount("Plasma", req, res);
-// };
 
 exports.getAmbulance = async (req, res) => {
-  await getAll("Ambulance", req, res);
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Ambulance",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = await getUnique(0, arg);
+    var cities = await getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get ${collection} data`);
+    console.log(e);
+  }
 };
-
-// exports.getAmbulanceByCount = async (req, res) => {
-//   await getCount("Ambulance", req, res);
-// };
 
 exports.getMeds = async (req, res) => {
-  await getAll("Meds", req, res);
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Meds",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = await getUnique(0, arg);
+    var cities = await getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get ${collection} data`);
+    console.log(e);
+  }
 };
-
-// exports.getMedsByCount = async (req, res) => {
-//   await getCount("Meds", req, res);
-// };

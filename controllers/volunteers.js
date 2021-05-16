@@ -22,29 +22,6 @@ getUnique = (index, arg) => {
   return output;
 };
 
-getAll = async (collection, req, res) => {
-  auth = sheetconfig.auth;
-  const sheets = await sheetconfig.connect();
-  try {
-    const getRows = await sheets.spreadsheets.values.get({
-      auth,
-      spreadsheetId,
-      range: collection,
-    });
-    var arg = getRows["data"]["values"].slice(1);
-    var states = getUnique(0, arg);
-    var cities = getUnique(1, arg);
-    res.json({
-      headers: getRows["data"]["values"][0],
-      states: states,
-      cities: cities,
-      data: arg,
-    });
-  } catch (e) {
-    res.status(400).send(`Cannot get ${collection} data`);
-    console.log(e);
-  }
-};
 
 // getCount = async (collection, req, res) => {
 //   var page = req.params.page;
@@ -76,7 +53,27 @@ getAll = async (collection, req, res) => {
 // };
 
 exports.getVolunteers = async (req, res) => {
-  await getAll("Volunteers/Helpline", req, res);
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Volunteers/Helpline",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = getUnique(0, arg);
+    var cities = getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get ${collection} data`);
+    console.log(e);
+  }
 };
 
 // exports.getVolunteersByCount = async (req, res) => {

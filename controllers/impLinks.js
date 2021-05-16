@@ -21,14 +21,14 @@ getUnique = (index, arg) => {
   return output;
 };
 
-getAll = async (collection, req, res) => {
+exports.getImpLinks = async (req, res) => {
   auth = sheetconfig.auth;
   const sheets = await sheetconfig.connect();
   try {
     const getRows = await sheets.spreadsheets.values.get({
       auth,
       spreadsheetId,
-      range: collection,
+      range: "All",
     });
     var arg = getRows["data"]["values"].slice(1);
     var states = getUnique(1, arg);
@@ -40,11 +40,7 @@ getAll = async (collection, req, res) => {
       data: arg,
     });
   } catch (e) {
-    res.status(400).send(`Cannot get ${collection} data`);
+    res.status(400).send(`Cannot get All data`);
     console.log(e);
   }
-};
-
-exports.getImpLinks = async (req, res) => {
-  await getAll("All", req, res);
 };
