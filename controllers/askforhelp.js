@@ -65,6 +65,7 @@ exports.addHelp = async (req, res) => {
             req.body.AttendantName,
             req.body.ContactNo,
             req.body.AlternateNo,
+            req.body.CovidPositive
           ],
         ],
       },

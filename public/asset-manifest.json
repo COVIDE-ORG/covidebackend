@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.68bff771.chunk.css",
-    "main.js": "/static/js/main.dd7494d6.chunk.js",
-    "main.js.map": "/static/js/main.dd7494d6.chunk.js.map",
+    "main.js": "/static/js/main.c965a009.chunk.js",
+    "main.js.map": "/static/js/main.c965a009.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.48d3e6ab.js",
     "runtime-main.js.map": "/static/js/runtime-main.48d3e6ab.js.map",
     "static/js/2.f5b3c662.chunk.js": "/static/js/2.f5b3c662.chunk.js",
@@ -11,16 +11,17 @@
     "static/css/main.68bff771.chunk.css.map": "/static/css/main.68bff771.chunk.css.map",
     "static/js/2.f5b3c662.chunk.js.LICENSE.txt": "/static/js/2.f5b3c662.chunk.js.LICENSE.txt",
     "static/media/Picture.15bd2887.jpeg": "/static/media/Picture.15bd2887.jpeg",
+    "static/media/desire.165438fe.png": "/static/media/desire.165438fe.png",
     "static/media/iot.9335d057.webp": "/static/media/iot.9335d057.webp",
-    "static/media/msac.a5ab4839.png": "/static/media/msac.a5ab4839.png",
-    "static/media/society.bbb4e433.png": "/static/media/society.bbb4e433.png",
-    "static/media/tph.4929edb4.jpg": "/static/media/tph.4929edb4.jpg",
-    "static/media/vt.2cf2ec4f.png": "/static/media/vt.2cf2ec4f.png"
+    "static/media/msac.06cda6d5.jpg": "/static/media/msac.06cda6d5.jpg",
+    "static/media/society.93e15144.jpg": "/static/media/society.93e15144.jpg",
+    "static/media/tph.331e50e8.jpg": "/static/media/tph.331e50e8.jpg",
+    "static/media/vt.0a0b97c8.jpg": "/static/media/vt.0a0b97c8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.48d3e6ab.js",
     "static/js/2.f5b3c662.chunk.js",
     "static/css/main.68bff771.chunk.css",
-    "static/js/main.dd7494d6.chunk.js"
+    "static/js/main.c965a009.chunk.js"
   ]
 }
