@@ -72,7 +72,7 @@ exports.getOxygen = async (req, res) => {
       data: arg,
     });
   } catch (e) {
-    res.status(400).send(`Cannot get ${collection} data`);
+    res.status(400).send(`Cannot get Oxygen data`);
     console.log(e);
   }
 };
@@ -96,7 +96,7 @@ exports.getBeds = async (req, res) => {
       data: arg,
     });
   } catch (e) {
-    res.status(400).send(`Cannot get ${collection} data`);
+    res.status(400).send(`Cannot get Beds data`);
     console.log(e);
   }
 };
@@ -144,7 +144,7 @@ exports.getAmbulance = async (req, res) => {
       data: arg,
     });
   } catch (e) {
-    res.status(400).send(`Cannot get ${collection} data`);
+    res.status(400).send(`Cannot get Ambulance data`);
     console.log(e);
   }
 };
@@ -161,6 +161,55 @@ exports.getMeds = async (req, res) => {
     var arg = getRows["data"]["values"].slice(1);
     var states = await getUnique(0, arg);
     var cities = await getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get meds data`);
+    console.log(e);
+  }
+};
+
+exports.getMisc = async (req, res) => {
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Misc",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = await getUnique(0, arg);
+    var cities = await getUnique(1, arg);
+    res.json({
+      headers: getRows["data"]["values"][0],
+      states: states,
+      cities: cities,
+      data: arg,
+    });
+  } catch (e) {
+    res.status(400).send(`Cannot get Misc data`);
+    console.log(e);
+  }
+};
+
+
+exports.getVolunteers = async (req, res) => {
+  auth = sheetconfig.auth;
+  const sheets = await sheetconfig.connect();
+  try {
+    const getRows = await sheets.spreadsheets.values.get({
+      auth,
+      spreadsheetId,
+      range: "Volunteers/Helpline",
+    });
+    var arg = getRows["data"]["values"].slice(1);
+    var states = getUnique(0, arg);
+    var cities = getUnique(1, arg);
     res.json({
       headers: getRows["data"]["values"][0],
       states: states,
