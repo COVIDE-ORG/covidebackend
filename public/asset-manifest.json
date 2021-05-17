@@ -1,30 +1,26 @@
 {
   "files": {
     "main.css": "/static/css/main.68bff771.chunk.css",
-    "main.js": "/static/js/main.fd1672d1.chunk.js",
-    "main.js.map": "/static/js/main.fd1672d1.chunk.js.map",
+    "main.js": "/static/js/main.f6d6c670.chunk.js",
+    "main.js.map": "/static/js/main.f6d6c670.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.48d3e6ab.js",
     "runtime-main.js.map": "/static/js/runtime-main.48d3e6ab.js.map",
-    "static/js/2.47505e98.chunk.js": "/static/js/2.47505e98.chunk.js",
-    "static/js/2.47505e98.chunk.js.map": "/static/js/2.47505e98.chunk.js.map",
+    "static/js/2.f5b3c662.chunk.js": "/static/js/2.f5b3c662.chunk.js",
+    "static/js/2.f5b3c662.chunk.js.map": "/static/js/2.f5b3c662.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.68bff771.chunk.css.map": "/static/css/main.68bff771.chunk.css.map",
-    "static/js/2.47505e98.chunk.js.LICENSE.txt": "/static/js/2.47505e98.chunk.js.LICENSE.txt",
-    "static/media/Picture.b91c7394.jpeg": "/static/media/Picture.b91c7394.jpeg",
-    "static/media/iot.71af8253.webp": "/static/media/iot.71af8253.webp",
-    "static/media/mohit_patel.9082506e.jpeg": "/static/media/mohit_patel.9082506e.jpeg",
-    "static/media/msac.8b532b4b.png": "/static/media/msac.8b532b4b.png",
-    "static/media/rudit_rahul.45445593.jpeg": "/static/media/rudit_rahul.45445593.jpeg",
-    "static/media/sambit_majhi.5bf5010a.png": "/static/media/sambit_majhi.5bf5010a.png",
-    "static/media/sambit_saha.7d416d9c.jpeg": "/static/media/sambit_saha.7d416d9c.jpeg",
-    "static/media/tph.aa0b69f8.jpg": "/static/media/tph.aa0b69f8.jpg",
-    "static/media/tt.c9f283ee.png": "/static/media/tt.c9f283ee.png",
-    "static/media/vt.a0953068.png": "/static/media/vt.a0953068.png"
+    "static/js/2.f5b3c662.chunk.js.LICENSE.txt": "/static/js/2.f5b3c662.chunk.js.LICENSE.txt",
+    "static/media/Picture.15bd2887.jpeg": "/static/media/Picture.15bd2887.jpeg",
+    "static/media/iot.9335d057.webp": "/static/media/iot.9335d057.webp",
+    "static/media/msac.a5ab4839.png": "/static/media/msac.a5ab4839.png",
+    "static/media/society.bbb4e433.png": "/static/media/society.bbb4e433.png",
+    "static/media/tph.4929edb4.jpg": "/static/media/tph.4929edb4.jpg",
+    "static/media/vt.2cf2ec4f.png": "/static/media/vt.2cf2ec4f.png"
   },
   "entrypoints": [
     "static/js/runtime-main.48d3e6ab.js",
-    "static/js/2.47505e98.chunk.js",
+    "static/js/2.f5b3c662.chunk.js",
     "static/css/main.68bff771.chunk.css",
-    "static/js/main.fd1672d1.chunk.js"
+    "static/js/main.f6d6c670.chunk.js"
   ]
 }
