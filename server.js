@@ -29,6 +29,10 @@ app.use("/api/implinks", impLinkRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/sitemap.xml', function (req, res) {
+  res.sendFile(path.join(__dirname, 'sitemap.xml'));
+});
+
 app.get('/:s', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
